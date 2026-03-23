@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #07080f;
+  --surface:   #0e1017;
+  --surface2:  #141620;
+  --surface3:  #1c1f2e;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.13);
+  --text:      #e8eaf8;
+  --muted:     #5a6080;
+  --dim:       #2e3350;
+
+  --violet:    #818cf8;
+  --violet-d:  rgba(129,140,248,0.12);
+  --violet-g:  rgba(129,140,248,0.06);
+  --cyan:      #22d3ee;
+  --cyan-d:    rgba(34,211,238,0.12);
+  --cyan-g:    rgba(34,211,238,0.06);
+  --pink:      #f472b6;
+  --pink-d:    rgba(244,114,182,0.12);
+  --pink-g:    rgba(244,114,182,0.06);
+  --emerald:   #34d399;
+  --emerald-d: rgba(52,211,153,0.12);
+  --orange:    #fb923c;
+  --orange-d:  rgba(251,146,60,0.12);
+  --red:       #f87171;
+  --red-d:     rgba(248,113,113,0.1);
+
+  --radius:    12px;
+  --radius-lg: 18px;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono:  'Geist Mono', monospace;
+}
+
+html, body, #root { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-mono); -webkit-font-smoothing: antialiased; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 2px; }
+
+a { color: var(--violet); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #a5b4fc; }
+
+button { cursor: pointer; font-family: var(--font-mono); border: none; outline: none; }
+
+input, textarea, select {
+  font-family: var(--font-mono);
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--violet);
+  background: var(--surface3);
+  box-shadow: 0 0 0 3px var(--violet-d);
+}
+input::placeholder { color: var(--dim); }
+select option { background: var(--surface2); }
+
+@keyframes fadeUp    { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+@keyframes scaleIn   { from { opacity:0; transform:scale(0.93); } to { opacity:1; transform:scale(1); } }
+@keyframes pulse     { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+@keyframes slideDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+@keyframes shimmer   { 0%{background-position:-200% center;} 100%{background-position:200% center;} }

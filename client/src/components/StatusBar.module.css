@@ -1,0 +1,9 @@
+.bar { height:28px; flex-shrink:0; background:var(--surface); border-top:1px solid var(--border); display:flex; align-items:center; padding:0 16px; gap:8px; font-size:10px; letter-spacing:0.05em; animation:fadeIn 0.4s 0.3s both; }
+.indicator { display:flex; align-items:center; gap:5px; }
+.dot { width:5px; height:5px; border-radius:50%; flex-shrink:0; }
+.dotConnecting { animation:pulse 1s infinite; }
+.label { font-weight:500; }
+.sep { color:var(--dim); margin:0 2px; }
+.info { color:var(--dim); }
+.saved { color:var(--emerald); animation:fadeIn 0.2s both; }
+.hint { margin-left:auto; color:var(--dim); }
