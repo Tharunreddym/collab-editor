@@ -42,6 +42,7 @@ services:
     name: collab-redis
     plan: free
     maxmemoryPolicy: allkeys-lru
+    ipAllowList: []
 
 databases:
   - name: collab-db
