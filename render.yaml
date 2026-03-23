@@ -5,7 +5,6 @@ services:
     rootDir: server
     buildCommand: npm install
     startCommand: npm run migrate && node src/index.js
-    plan: free
     envVars:
       - key: NODE_ENV
         value: production
@@ -31,7 +30,6 @@ services:
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
-    plan: free
     envVars:
       - key: VITE_WS_URL
         value: wss://collab-editor-server.onrender.com
