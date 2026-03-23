@@ -1,5 +1,4 @@
 services:
-  # ── Node.js API + WebSocket server ───────────────────────
   - type: web
     name: collab-editor-server
     runtime: node
@@ -21,11 +20,10 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CLIENT_URL
-        value: https://collab-editor.onrender.com   # ← update to your static site URL
+        value: https://collab-editor-client.onrender.com
       - key: PORT
         value: "10000"
 
-  # ── React frontend (static site) ─────────────────────────
   - type: web
     name: collab-editor-client
     runtime: static
@@ -34,19 +32,17 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_WS_URL
-        value: wss://collab-editor-server.onrender.com  # ← update to server URL
+        value: wss://collab-editor-server.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
 
-  # ── Redis ─────────────────────────────────────────────────
   - type: redis
     name: collab-redis
     plan: free
     maxmemoryPolicy: allkeys-lru
 
 databases:
-  # ── PostgreSQL ────────────────────────────────────────────
   - name: collab-db
     plan: free
